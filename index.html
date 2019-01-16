@@ -1,0 +1,30 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dogran</title>
+</head>
+<body>
+    <h1>Dogran</h1>
+    <div id="cachorros"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1002.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1003.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1026.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1041.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1085.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1105.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1127.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1131.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1222.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1234.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1235.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1268.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1292.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1303.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1349.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1417.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1452.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1475.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1527.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1534.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1540.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1636.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1644.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1650.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1653.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1688.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1690.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1696.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1706.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1728.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1742.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_175.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1761.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1774.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1782.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1819.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1835.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1845.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1856.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1861.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1862.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1865.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1895.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1907.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1918.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1920.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1931.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_195.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1954.jpg"><img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_1979.jpg"></div>
+    <script>
+        var imagens = new XMLHttpRequest();
+        imagens.addEventListener("load", MostrarImagens);
+        imagens.open("get","https://dog.ceo/api/breed/wolfhound/images");
+        imagens.send();
+
+        function MostrarImagens(){
+            if (imagens.status==200){
+                var resultado = JSON.parse(imagens.response);
+                var listaImagens = resultado.message;
+                for (var i=0; i<50; i++){
+                    var foto = document.createElement("img")
+                    foto.src = listaImagens[i] 
+                    document.querySelector("#cachorros").appendChild(foto);
+                }
+
+            }
+        }
+    </script>
+    
+</body></html>
